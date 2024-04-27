@@ -4,6 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class mainMenu : MonoBehaviour
 {
+    [SerializeField] AudioClip buttonSound;
+    AudioSource audioSource;
+
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void StartGame()
     {
         SceneManager.LoadScene("Scene1");
@@ -13,5 +21,8 @@ public class mainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    
+    public void soundButton()
+    {   if(audioSource != null && buttonSound!=null)
+        audioSource.PlayOneShot(buttonSound);
+    }
 }
