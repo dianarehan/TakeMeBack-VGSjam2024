@@ -11,6 +11,7 @@ TagManager:
   - goUP
   - fake
   - dies
+  - lever
   layers:
   - Default
   - TransparentFX
