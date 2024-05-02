@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
+  - push
+  - crowbar
+  - lever
+  - laserbox
+  - cubord
+  - laser
+  - cage
+  - plank
   layers:
   - Default
   - TransparentFX
