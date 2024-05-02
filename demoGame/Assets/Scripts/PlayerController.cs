@@ -14,12 +14,12 @@ public class PlayerController : MonoBehaviour
     GameObject itemToBeDisplayed;
     GameObject newItem;
     private Sprite pickedItemSprite;
-    public RawImage blackScreen;
+    //public RawImage blackScreen;
 
     void Start()
     {
         itemDisplayer.GetComponent<Image>();
-        blackScreen.CrossFadeAlpha(0, 7f, true);
+        //blackScreen.CrossFadeAlpha(0, 7f, true);
     }
 
     // Update is called once per frame
