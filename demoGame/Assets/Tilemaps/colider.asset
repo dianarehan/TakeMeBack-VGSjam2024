@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: colider
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 7482667652216324306, guid: 56c3334fb236e854fa177b6932535da4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_Transform:
     e00: 1
     e01: 0

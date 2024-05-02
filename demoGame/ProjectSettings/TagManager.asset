@@ -4,7 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Item
+  - floor
+  - fragment
+  - dash
+  - danger
+  - goUP
+  - fake
+  - dies
+  - lever
+  - goLeft
   layers:
   - Default
   - TransparentFX
