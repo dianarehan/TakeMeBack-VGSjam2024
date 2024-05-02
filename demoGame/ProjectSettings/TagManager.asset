@@ -4,15 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Item
-  - push
-  - crowbar
-  - lever
-  - laserbox
-  - cubord
-  - laser
-  - cage
-  - plank
+  - floor
+  - fragment
+  - dash
+  - danger
+  - goUP
+  - fake
+  - dies
   layers:
   - Default
   - TransparentFX
