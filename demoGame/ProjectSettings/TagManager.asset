@@ -12,6 +12,7 @@ TagManager:
   - fake
   - dies
   - lever
+  - goLeft
   layers:
   - Default
   - TransparentFX
