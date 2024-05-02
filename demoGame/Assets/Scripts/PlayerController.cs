@@ -33,7 +33,11 @@ public class PlayerController : MonoBehaviour
         if (youCanPickItem)
         {   //here if the player presses E the item is picked then it gets shown on the canvas
             if (Input.GetKeyDown(KeyCode.E))
-            {   // i save the item's sprite in a variable before destroying it to use it later in putting it on the canvas
+            {
+                newItem = Instantiate(itemToBeDisplayed);
+                newItem.SetActive(false); // Deactivate the copied item
+
+                // i save the item's sprite in a variable before destroying it to use it later in putting it on the canvas
                 pickedItemSprite = itemToBeDisplayed.GetComponent<SpriteRenderer>().sprite;
 
                 itemDisplayer.GetComponent<Image>().sprite = pickedItemSprite; 
@@ -51,7 +55,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Item") )
         {   
             itemToBeDisplayed = other.gameObject;
-            newItem = other.gameObject;
+            
             other.gameObject.transform.GetChild(0).gameObject.SetActive(true);
 
             youCanPickItem=true;
