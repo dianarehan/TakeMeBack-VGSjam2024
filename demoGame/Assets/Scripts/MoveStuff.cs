@@ -17,6 +17,8 @@ public class MoveStuff : MonoBehaviour
     private Vector3 targetPosition2;
     private bool isOpening2 = false;
 
+
+    public GameObject movingPlatfrom;
     private void Start()
     {
         initialPosition = doorBeforePortal.transform.localPosition;
@@ -60,7 +62,14 @@ public class MoveStuff : MonoBehaviour
         }
 
     }
+    public void MovePlatfrom()
+    {
+        float t = Mathf.Clamp01(Time.deltaTime);
+        Vector3 target = new Vector3(-30, 2.5f, 0);
+        movingPlatfrom.transform.localPosition = Vector3.Lerp(movingPlatfrom.transform.localPosition, target, t);
 
+        
+    }
     public void OpenDoorBeforePortal()
     {
         if (!isOpening)

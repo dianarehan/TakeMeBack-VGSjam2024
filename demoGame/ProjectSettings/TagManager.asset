@@ -20,6 +20,7 @@ TagManager:
   - Lever
   - Portal1
   - Portal2
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

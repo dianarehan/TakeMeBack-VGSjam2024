@@ -26,19 +26,34 @@ public class PlayerController : MonoBehaviour
 
     public GameObject camera;
     LevelManager manager;
+    AudioSource audioSource;
+    public AudioClip portalSound;
+    private GameObject portal2Object;
 
     MessageDisplay messageDisplay;
 
+
+
+    public GameObject moveStuff;
+    MoveStuff moveStuff2;
+    bool goMovePlatfrom = false;
+
+
+    bool foundFakeDoor = false;
     void Start()
     {
         LoadAccumulatedScore();
         rb = this.GetComponent<Rigidbody2D>();
         manager =camera.GetComponent<LevelManager>();
         messageDisplay= camera.GetComponent<MessageDisplay>();
+        audioSource = camera.GetComponent<AudioSource>();
+        portal2Object = GameObject.Find("SecondPortal");
         //gameObject.transform.position= checkPoints[0].transform.position;
+        moveStuff2 = moveStuff.GetComponent<MoveStuff>();
+
         Debug.Log(fragmentScore);
         Debug.Log("Accumulated Score: " + PlayerPrefs.GetInt("AccumulatedScore", 0));
-
+        Debug.Log(portal2Object.name);
     }
 
     void Update()
@@ -57,13 +72,19 @@ public class PlayerController : MonoBehaviour
         float jumpingSignal = Input.GetAxis("Jump");
         if (jumpingSignal > 0 && isGrounded)
             Jump();
-        if (fragmentScore == 6&&!donePrinting)
+        if (foundFakeDoor && !donePrinting)
         {
             StartCoroutine(messageDisplay.DisplayMessage());
             donePrinting = true;
         }
-        if(fragmentScore==7)
+        if(fragmentScore==4)
             CompleteLevel();
+
+        if (goMovePlatfrom)
+        {
+            moveStuff2.MovePlatfrom();
+
+        }
     }
 
     void Flip()
@@ -89,7 +110,11 @@ public class PlayerController : MonoBehaviour
             AddScore(1);
             Destroy(collision.gameObject);
         }
-        
+        if (collision.CompareTag("Portal1"))
+        {
+            StartCoroutine(TeleportAfterDelay());
+        }
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -97,6 +122,7 @@ public class PlayerController : MonoBehaviour
         {
             isFacingALadder = false;
         }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -104,6 +130,17 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            goMovePlatfrom = true;
+            
+        }
+        if (collision.gameObject.CompareTag("FakeDoor"))
+        {
+            foundFakeDoor = true;
+
+        }
+
 
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -155,5 +192,15 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
+    }
+      IEnumerator TeleportAfterDelay()
+    {
+        yield return new WaitForSeconds(0.5f); // Wait for one second
+
+        // Move the object to the position of portal2Object
+        this.gameObject.transform.localPosition = portal2Object.transform.localPosition;
+
+        // Play the portal sound
+        audioSource.PlayOneShot(portalSound);
     }
 }
