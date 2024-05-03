@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
     AudioSource audioSource;
     public GameObject textMeshPro;
     private TextMeshProUGUI textMeshPro2; 
-   
+    
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
