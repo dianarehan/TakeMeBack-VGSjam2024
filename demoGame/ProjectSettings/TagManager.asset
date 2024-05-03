@@ -7,19 +7,13 @@ TagManager:
   - floor
   - fragment
   - dash
-  - danger
-  - goUP
   - fake
-  - dies
-  - lever
-  - goLeft
-  - Ladder
   - lever1
   - lever2
   - lever3
   - fake1
   - fake2
-  - fake3
+  - Ladder
   layers:
   - Default
   - TransparentFX
