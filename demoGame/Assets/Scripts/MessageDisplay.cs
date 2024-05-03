@@ -15,7 +15,7 @@ public class MessageDisplay : MonoBehaviour
         
     }
 
-    IEnumerator DisplayMessage()
+    public IEnumerator DisplayMessage()
     {
         foreach (char c in message)
         {
