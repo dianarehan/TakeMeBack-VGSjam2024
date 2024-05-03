@@ -14,6 +14,12 @@ TagManager:
   - lever
   - goLeft
   - Ladder
+  - lever1
+  - lever2
+  - lever3
+  - fake1
+  - fake2
+  - fake3
   layers:
   - Default
   - TransparentFX
