@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -19,13 +20,18 @@ public class PlayerController : MonoBehaviour
 
 
     int fragmentScore = 0;
+    private int finalScore;
+
 
     public GameObject camera;
     LevelManager manager;
     void Start()
     {
-       rb = this.GetComponent<Rigidbody2D>();
-       manager =camera.GetComponent<LevelManager>();
+        LoadAccumulatedScore();
+        rb = this.GetComponent<Rigidbody2D>();
+        manager =camera.GetComponent<LevelManager>();
+        Debug.Log(fragmentScore);
+        Debug.Log("Accumulated Score: " + PlayerPrefs.GetInt("AccumulatedScore", 0));
 
     }
 
@@ -46,7 +52,8 @@ public class PlayerController : MonoBehaviour
         if (jumpingSignal > 0 && isGrounded)
             Jump();
        
-        
+        if(fragmentScore==7)
+            CompleteLevel();
     }
 
     void Flip()
@@ -98,9 +105,36 @@ public class PlayerController : MonoBehaviour
     }
     void AddScore(int score)
     {
-        fragmentScore++;
+        fragmentScore+=score;
         manager.PlaySound();
         manager.UpdateScore(fragmentScore);
     }
-    
+
+
+
+    public void SaveLocalScore()
+    {
+        finalScore += fragmentScore;
+        fragmentScore = 0; 
+        SaveAccumulatedScore(); 
+    }
+
+    // Function to save the accumulated score
+    private void SaveAccumulatedScore()
+    {
+        PlayerPrefs.SetInt("AccumulatedScore", finalScore);
+        PlayerPrefs.Save();
+    }
+
+    // Function to load the accumulated score
+    private void LoadAccumulatedScore()
+    {
+        finalScore = PlayerPrefs.GetInt("AccumulatedScore", 0); // 0 is the default value if the key doesn't exist
+    }
+
+    public void CompleteLevel()
+    {
+        SaveLocalScore(); // Save the local score to the accumulated score
+        SceneManager.LoadScene("level2");              
+    }
 }

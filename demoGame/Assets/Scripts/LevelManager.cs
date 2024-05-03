@@ -7,12 +7,13 @@ public class LevelManager : MonoBehaviour
     AudioSource audioSource;
     public GameObject textMeshPro;
     private TextMeshProUGUI textMeshPro2; 
+   
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
       
         textMeshPro2 = textMeshPro.GetComponent<TextMeshProUGUI>();
-        Debug.Log(textMeshPro2 != null); 
+        
     }
     public void PlaySound()
     {
@@ -27,4 +28,6 @@ public class LevelManager : MonoBehaviour
             textMeshPro2.text = "Score: " + currScore;
         }
     }
+
+    
 }
