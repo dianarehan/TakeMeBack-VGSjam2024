@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     bool isFacingRight =true;
     bool isFacingALadder = false;
     bool isGrounded = true;
+    bool donePrinting = false;
     Rigidbody2D rb;
 
 
@@ -25,11 +26,14 @@ public class PlayerController : MonoBehaviour
 
     public GameObject camera;
     LevelManager manager;
+
+    MessageDisplay messageDisplay;
     void Start()
     {
         LoadAccumulatedScore();
         rb = this.GetComponent<Rigidbody2D>();
         manager =camera.GetComponent<LevelManager>();
+        messageDisplay= camera.GetComponent<MessageDisplay>();
         Debug.Log(fragmentScore);
         Debug.Log("Accumulated Score: " + PlayerPrefs.GetInt("AccumulatedScore", 0));
 
@@ -51,7 +55,11 @@ public class PlayerController : MonoBehaviour
         float jumpingSignal = Input.GetAxis("Jump");
         if (jumpingSignal > 0 && isGrounded)
             Jump();
-       
+        if (fragmentScore == 6&&!donePrinting)
+        {
+            StartCoroutine(messageDisplay.DisplayMessage());
+            donePrinting = true;
+        }
         if(fragmentScore==7)
             CompleteLevel();
     }
@@ -135,6 +143,9 @@ public class PlayerController : MonoBehaviour
     public void CompleteLevel()
     {
         SaveLocalScore(); // Save the local score to the accumulated score
-        SceneManager.LoadScene("level2");              
+        if(SceneManager.GetActiveScene().name=="level2")
+            SceneManager.LoadScene("mainMenu");
+        else 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);              
     }
 }
