@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         //rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-        rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+        rb.velocity = new Vector2(rb.velocity.x, jumpSpeed* rb.gravityScale);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -114,7 +114,11 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(TeleportAfterDelay());
         }
+        if (collision.gameObject.CompareTag("FakeDoor"))
+        {
+            foundFakeDoor = true;
 
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -122,7 +126,11 @@ public class PlayerController : MonoBehaviour
         {
             isFacingALadder = false;
         }
-        
+        if (collision.gameObject.CompareTag("FakeDoor"))
+        {
+            foundFakeDoor = false;
+            
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -135,11 +143,7 @@ public class PlayerController : MonoBehaviour
             goMovePlatfrom = true;
             
         }
-        if (collision.gameObject.CompareTag("FakeDoor"))
-        {
-            foundFakeDoor = true;
-
-        }
+        
 
 
     }

@@ -21,6 +21,7 @@ TagManager:
   - Portal1
   - Portal2
   - MovingPlatform
+  - FakeDoor
   layers:
   - Default
   - TransparentFX

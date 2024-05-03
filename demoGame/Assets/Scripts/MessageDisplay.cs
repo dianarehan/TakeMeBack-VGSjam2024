@@ -23,13 +23,16 @@ public class MessageDisplay : MonoBehaviour
     }
     public IEnumerator DisplayMessage()
     {
+        done = false;
         panelDisplayer.SetActive(true);
+        
         foreach (char c in message)
         {
             label.text += c;
             yield return new WaitForSeconds(0.2f); // Wait for 0.2 seconds
         }
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         done = true;
+        label = null;
     }
 }
