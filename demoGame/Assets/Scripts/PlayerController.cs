@@ -28,12 +28,14 @@ public class PlayerController : MonoBehaviour
     LevelManager manager;
 
     MessageDisplay messageDisplay;
+
     void Start()
     {
         LoadAccumulatedScore();
         rb = this.GetComponent<Rigidbody2D>();
         manager =camera.GetComponent<LevelManager>();
         messageDisplay= camera.GetComponent<MessageDisplay>();
+        //gameObject.transform.position= checkPoints[0].transform.position;
         Debug.Log(fragmentScore);
         Debug.Log("Accumulated Score: " + PlayerPrefs.GetInt("AccumulatedScore", 0));
 
@@ -143,9 +145,15 @@ public class PlayerController : MonoBehaviour
     public void CompleteLevel()
     {
         SaveLocalScore(); // Save the local score to the accumulated score
+        
         if(SceneManager.GetActiveScene().name=="level2")
             SceneManager.LoadScene("mainMenu");
-        else 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);              
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(camera);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        }
     }
 }
