@@ -105,7 +105,12 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(messageDisplay.DisplayMessage());
             donePrinting = true;
+            StartCoroutine(OpenDelayedLevel());
         }
+        /*if (donePrinting)
+        {
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }*/
         if(currLevelScore==fragmentScore&&playerAtRealDoor)
             CompleteLevel();
 
@@ -131,11 +136,8 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ladder"))
-        {
-            isFacingALadder = true;
-        }
-        else if (collision.CompareTag("fragment"))
+       
+        if (collision.CompareTag("fragment"))
         {
             AddScore(1);
             Destroy(collision.gameObject);
@@ -157,10 +159,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ladder"))
-        {
-            isFacingALadder = false;
-        }
+        
         if (collision.gameObject.CompareTag("FakeDoor"))
         {
             foundFakeDoor = false;
@@ -175,7 +174,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("floor"))
+        if (collision.gameObject.CompareTag("floor")|| collision.gameObject.CompareTag("MovingPlatform"))
         {
             isGrounded = true;
             anim.SetBool("jumping", false);
@@ -244,6 +243,13 @@ public class PlayerController : MonoBehaviour
 
         // Play the portal sound
         audioSource.PlayOneShot(portalSound);
+    }
+    IEnumerator OpenDelayedLevel()
+    {
+        yield return new WaitForSeconds(5f); // Wait for one second
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+
     }
     IEnumerator oww()
     {
