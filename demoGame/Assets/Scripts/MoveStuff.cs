@@ -25,8 +25,13 @@ public class MoveStuff : MonoBehaviour
     GameObject movingPlatfrom;
 
     Vector3 target;
+
+
+    public AudioClip clip;
+    AudioSource audioSource;
     private void Start()
-    {
+    {   
+        audioSource = GetComponent<AudioSource>();
         movingPillar = GameObject.Find("moving pillar");
         doorBeforePortal = GameObject.Find("fakewall (1)");
         doorAfterPortal = GameObject.Find("fakewall");
@@ -57,7 +62,7 @@ public class MoveStuff : MonoBehaviour
 
             // Move the door towards the target position gradually
             doorBeforePortal.transform.localPosition = Vector3.Lerp(doorBeforePortal.transform.localPosition, targetPosition, t);
-
+            audioSource.PlayOneShot(clip,0.006f);
             // Check if the door has reached or passed the target position
             if (Vector3.Distance(doorBeforePortal.transform.localPosition, targetPosition) < 0.01f)
             {
@@ -73,7 +78,7 @@ public class MoveStuff : MonoBehaviour
 
             // Move the door towards the target position gradually
             doorAfterPortal.transform.localPosition = Vector3.Lerp(doorAfterPortal.transform.localPosition, targetPosition2, t);
-
+            audioSource.PlayOneShot(clip,0.006f);
             // Check if the door has reached or passed the target position
             if (Vector3.Distance(doorAfterPortal.transform.localPosition, targetPosition2) < 0.01f)
             {
@@ -84,7 +89,7 @@ public class MoveStuff : MonoBehaviour
         {
             // Calculate the percentage of time elapsed
             float t = Mathf.Clamp01(Time.deltaTime);
-
+            audioSource.PlayOneShot(clip,0.006f);
             // Move the door towards the target position gradually
             movingPillar.transform.localPosition = Vector3.Lerp(movingPillar.transform.localPosition, targetPosition3, t);
 

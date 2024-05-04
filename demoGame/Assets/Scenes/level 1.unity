@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352, y: 232}
+  m_AnchoredPosition: {x: -399, y: 256}
   m_SizeDelta: {x: 239.6114, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27390997
@@ -521,50 +521,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72703073}
   m_CullTransparentMesh: 1
---- !u!1 &131312680
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 131312682}
-  - component: {fileID: 131312681}
-  m_Layer: 0
-  m_Name: StuffManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &131312681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131312680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2d22f7a1b94ed04bac2385420cdb698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &131312682
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131312680}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02061835, y: -1.0085864, z: -11.005736}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &242610004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12112,6 +12068,7 @@ GameObject:
   - component: {fileID: 1258579153}
   - component: {fileID: 1258579154}
   - component: {fileID: 1258579155}
+  - component: {fileID: 1258579156}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12353,6 +12310,19 @@ MonoBehaviour:
   textMeshPro: {fileID: 72703073}
   panelDisplayer: {fileID: 1933340444}
   message: Not All Doors are Exit, You gotta watch out!
+--- !u!114 &1258579156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258579148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d22f7a1b94ed04bac2385420cdb698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 6fda65544afe49a49b726337ae07f8a0, type: 3}
 --- !u!1 &1259651903
 GameObject:
   m_ObjectHideFlags: 0
@@ -13644,7 +13614,7 @@ PrefabInstance:
     - target: {fileID: 235543945226168618, guid: f54bd2f220a51ac4ba0b2639b74c21d4, type: 3}
       propertyPath: moveStuff
       value: 
-      objectReference: {fileID: 131312680}
+      objectReference: {fileID: 1258579148}
     - target: {fileID: 235543945226168618, guid: f54bd2f220a51ac4ba0b2639b74c21d4, type: 3}
       propertyPath: m_IsLeverOn
       value: 0
@@ -14031,7 +14001,7 @@ PrefabInstance:
     - target: {fileID: 3558291417488652772, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: moveStuff
       value: 
-      objectReference: {fileID: 131312680}
+      objectReference: {fileID: 1258579148}
     - target: {fileID: 3558291417488652772, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: portalSound
       value: 
@@ -14069,7 +14039,6 @@ SceneRoots:
   - {fileID: 49501694}
   - {fileID: 1122868810}
   - {fileID: 1179896965}
-  - {fileID: 131312682}
   - {fileID: 1560284430}
   - {fileID: 1309275553}
   - {fileID: 1942326524}

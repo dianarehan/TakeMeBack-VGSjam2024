@@ -31,7 +31,7 @@ public class MessageDisplay : MonoBehaviour
             label.text += c;
             yield return new WaitForSeconds(0.05f); // Wait for 0.2 seconds
         }
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         panelDisplayer.SetActive(false);
         label = null;
         

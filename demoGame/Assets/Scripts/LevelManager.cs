@@ -25,11 +25,11 @@ public class LevelManager : MonoBehaviour
        
         if (textMeshPro2 != null)
         {
-            if(SceneManager.GetActiveScene().Equals( "level 1"))
+            if(SceneManager.GetActiveScene().name =="level 1")
             {
                 textMeshPro2.text = "Score: " + currScore + "/17";
             }
-            if (SceneManager.GetActiveScene().Equals("level2"))
+            else if (SceneManager.GetActiveScene().name =="level2")
             {
                 textMeshPro2.text = "Score: " + currScore + "/23";
             }
