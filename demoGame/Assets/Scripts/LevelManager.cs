@@ -1,5 +1,6 @@
 using UnityEngine;
-using TMPro; 
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -24,8 +25,19 @@ public class LevelManager : MonoBehaviour
        
         if (textMeshPro2 != null)
         {
-            
-            textMeshPro2.text = "Score: " + currScore;
+            if(SceneManager.GetActiveScene().Equals( "level 1"))
+            {
+                textMeshPro2.text = "Score: " + currScore + "/17";
+            }
+            if (SceneManager.GetActiveScene().Equals("level2"))
+            {
+                textMeshPro2.text = "Score: " + currScore + "/23";
+            }
+            else
+            {
+                textMeshPro2.text = "Score: " + currScore ;
+            }
+
         }
     }
 

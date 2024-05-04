@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -379, y: 242}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -352, y: 232}
+  m_SizeDelta: {x: 239.6114, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27390997
 MonoBehaviour:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: 0'
+  m_text: 'Score: 0/17'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac622ad772657e24ea4a87beaf451e39, type: 2}
   m_sharedMaterial: {fileID: 1371816210246826069, guid: ac622ad772657e24ea4a87beaf451e39, type: 2}
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -26.006653, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.72280884, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -14024,6 +14024,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1258579148}
+    - target: {fileID: 3558291417488652772, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
+      propertyPath: jumpSpeed
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3558291417488652772, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: moveStuff
       value: 
