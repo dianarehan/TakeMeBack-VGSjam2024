@@ -1080,11 +1080,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 990803309611616752, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -52.38
+      value: -37.83
       objectReference: {fileID: 0}
     - target: {fileID: 990803309611616752, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.49
+      value: 4.93
       objectReference: {fileID: 0}
     - target: {fileID: 990803309611616752, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2594,7 +2594,7 @@ Transform:
   m_GameObject: {fileID: 665768396}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -52.38, y: -4.49, z: -11}
+  m_LocalPosition: {x: -37.83, y: 4.93, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8190,10 +8190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d22f7a1b94ed04bac2385420cdb698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorBeforePortal: {fileID: 2042296729}
-  openDuration: 2
-  doorAfterPortal: {fileID: 1116443205}
-  openDuration2: 2
   movingPlatfrom: {fileID: 395852983}
 --- !u!4 &998860501
 Transform:
@@ -8545,11 +8541,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8167790129882259385, guid: b909e3a652eb42a45a685a01710d7bed, type: 3}
   m_PrefabInstance: {fileID: 1049456865}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1116443205 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 423437743203891224, guid: 33a373f9546471d4188f9ae7cc50df7b, type: 3}
-  m_PrefabInstance: {fileID: 4583825397511521984}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1150286437
 PrefabInstance:
@@ -10250,11 +10241,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &2042296729 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 423437743203891224, guid: 33a373f9546471d4188f9ae7cc50df7b, type: 3}
-  m_PrefabInstance: {fileID: 688549416}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4583825397511521984
 PrefabInstance:
   m_ObjectHideFlags: 0

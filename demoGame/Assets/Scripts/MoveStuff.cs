@@ -18,11 +18,12 @@ public class MoveStuff : MonoBehaviour
     private bool isOpening2 = false;
 
 
-    public GameObject movingPlatfrom;
+    GameObject movingPlatfrom;
     private void Start()
     {
         doorBeforePortal = GameObject.Find("fakewall (1)");
         doorAfterPortal = GameObject.Find("fakewall");
+        movingPlatfrom = GameObject.Find("MovingPlatform");
         initialPosition = doorBeforePortal.transform.localPosition;
         targetPosition = initialPosition + Vector3.up * 9f; // Move 6 units up
 
