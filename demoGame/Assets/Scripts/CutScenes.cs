@@ -13,7 +13,7 @@ public class CutScenes : MonoBehaviour
     private TextMeshProUGUI label;
     string[] message = { "\nYou went to sleep in your comfortable bed, but woke up in an ancient castle.\r\n\nthe architecture really takes you back to ancient times, the kind of things that only exists in fantasy novels", 
         "\nIn this castle lived a \"great\" king, as all kings are called, but with power comes responsibility, and alas, also comes greed.\r\nThe king was not special enough to not succumb to that greed and amassed wealth from the people to build a massive castle.", 
-        "\nYou reach the end, but you come up empty-handed. No treasure or interesting lore came out of this small adventure, maybe just a little sense of satisfaction from the thrill of exploration and enjoying \"Diana's\" Music ofc .\r\n\nIn the end, the castle was as empty as the consumed soul of its creator.\r\n\r\nYou wake up in your warm, fluffy bed." };
+        "\nYou reach the end, but you come up empty-handed. No treasure or interesting lore came out of this small adventure, maybe just a little sense of satisfaction from the thrill of exploration and enjoying \"Diana's\" Music ofc\r\n\nIn the end, the castle was as empty as the consumed soul of its creator.\r\n\r\nYou wake up in your warm, fluffy bed." };
     public int sceneNumber=0;
     bool done = false;
     AudioSource audioSource;
