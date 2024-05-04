@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -807, y: 419}
-  m_SizeDelta: {x: 239.6114, y: 50}
+  m_AnchoredPosition: {x: -674, y: 444}
+  m_SizeDelta: {x: 467.81, y: 91.4241}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27390997
 MonoBehaviour:
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12144,7 +12144,7 @@ Transform:
   m_GameObject: {fileID: 1258579148}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.3900003, y: 5.48, z: -20}
+  m_LocalPosition: {x: 6.51, y: 5.77, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13332,7 +13332,7 @@ RectTransform:
   m_GameObject: {fileID: 1654027472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 72703074}
@@ -13340,7 +13340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 421, y: -491.84387}
+  m_AnchoredPosition: {x: 344, y: -716}
   m_SizeDelta: {x: 467.5871, y: -47.5691}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1654027474
@@ -13944,11 +13944,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 990803309611616752, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.39
+      value: 11.51
       objectReference: {fileID: 0}
     - target: {fileID: 990803309611616752, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.48
+      value: 2.77
       objectReference: {fileID: 0}
     - target: {fileID: 990803309611616752, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: m_LocalPosition.z
