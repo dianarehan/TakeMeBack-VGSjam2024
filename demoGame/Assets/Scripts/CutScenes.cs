@@ -52,9 +52,11 @@ public class CutScenes : MonoBehaviour
             yield return new WaitForSeconds(0.09f); // Wait for 0.2 seconds
             
         }
+        audioSource.Stop();
         yield return new WaitForSeconds(3f);
         
         label = null;
         done = true;
+        
     }
 }
