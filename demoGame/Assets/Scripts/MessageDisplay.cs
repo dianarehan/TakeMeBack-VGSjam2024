@@ -8,7 +8,7 @@ public class MessageDisplay : MonoBehaviour
     public GameObject textMeshPro;
     public GameObject panelDisplayer;
     private TextMeshProUGUI label;
-    public string message = "Not All Doors are Exit lmao";
+    public string message = "Not All Doors are Exit, You gotta watch out!";
     bool done = false;
     void Start()
     {   
@@ -17,8 +17,8 @@ public class MessageDisplay : MonoBehaviour
     }
     private void Update()
     {
-        if(done)
-            panelDisplayer.SetActive(false);
+        
+            
 
     }
     public IEnumerator DisplayMessage()
@@ -32,7 +32,7 @@ public class MessageDisplay : MonoBehaviour
             yield return new WaitForSeconds(0.2f); // Wait for 0.2 seconds
         }
         yield return new WaitForSeconds(1f);
-        done = true;
+        panelDisplayer.SetActive(false);
         label = null;
     }
 }

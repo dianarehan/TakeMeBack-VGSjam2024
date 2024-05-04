@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -40,8 +41,18 @@ public class PlayerController : MonoBehaviour
 
 
     bool foundFakeDoor = false;
+
+
+    public int currLevelScore;
+    bool playerAtRealDoor;
+
+
+    GameObject startingPoint;
+
     void Start()
     {
+        donePrinting = false;
+        StartCoroutine(blink());
         LoadAccumulatedScore();
         rb = this.GetComponent<Rigidbody2D>();
         manager =camera.GetComponent<LevelManager>();
@@ -49,6 +60,7 @@ public class PlayerController : MonoBehaviour
         audioSource = camera.GetComponent<AudioSource>();
         portal2Object = GameObject.Find("SecondPortal");
         //gameObject.transform.position= checkPoints[0].transform.position;
+        startingPoint = GameObject.Find("StartingPoint");
         moveStuff2 = moveStuff.GetComponent<MoveStuff>();
 
         Debug.Log(fragmentScore);
@@ -65,9 +77,11 @@ public class PlayerController : MonoBehaviour
         else if (isFacingRight && horizontalSignal < 0)
             Flip();
 
-        float verticalSignal = Input.GetAxis("Vertical");
-            if(isFacingALadder)
-                this.transform.Translate(new Vector2(0, verticalSignal*Time.deltaTime* verticalSpeed));
+        if (gameObject.transform.localPosition.y < -35)
+        {
+            StartCoroutine(oww());
+            gameObject.transform.localPosition = startingPoint.transform.localPosition;
+        }
 
         float jumpingSignal = Input.GetAxis("Jump");
         if (jumpingSignal > 0 && isGrounded)
@@ -77,7 +91,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(messageDisplay.DisplayMessage());
             donePrinting = true;
         }
-        if(fragmentScore==4)
+        if(currLevelScore==fragmentScore&&playerAtRealDoor)
             CompleteLevel();
 
         if (goMovePlatfrom)
@@ -119,6 +133,11 @@ public class PlayerController : MonoBehaviour
             foundFakeDoor = true;
 
         }
+        if (collision.gameObject.CompareTag("RealDoor"))
+        {
+            playerAtRealDoor = true;
+
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -131,6 +150,12 @@ public class PlayerController : MonoBehaviour
             foundFakeDoor = false;
             
         }
+        if (collision.gameObject.CompareTag("RealDoor"))
+        {
+            playerAtRealDoor = false;
+
+        }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -191,7 +216,7 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("mainMenu");
         else
         {
-            
+            DontDestroyOnLoad(camera.GetComponent<AudioSource>());
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
@@ -205,5 +230,37 @@ public class PlayerController : MonoBehaviour
 
         // Play the portal sound
         audioSource.PlayOneShot(portalSound);
+    }
+    IEnumerator oww()
+    {
+        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        UnityEngine.Color originalColor = spriteRenderer.color;
+        UnityEngine.Color currentColor = originalColor;
+
+        for (int i = 0; i < 3; i++)
+        {
+            currentColor = UnityEngine.Color.red;
+            spriteRenderer.color = currentColor;
+            yield return new WaitForSeconds(0.1f);
+
+            currentColor = originalColor;
+            spriteRenderer.color = currentColor;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    IEnumerator blink()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            //spr.enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            yield return new WaitForSeconds(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+
+        }
+
     }
 }

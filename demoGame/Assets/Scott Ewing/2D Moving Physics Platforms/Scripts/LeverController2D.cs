@@ -20,12 +20,13 @@ namespace ScottEwing.MovingObjects.MovingPhysicsPlatform2D {
 
         bool shouldCheckForLeverInput1 = false;
         bool shouldCheckForLeverInput2 = false;
+        bool shouldCheckForLeverInput3 = false;
 
         public GameObject moveStuff;
         MoveStuff moveStuff2;
         bool isHeDone1 = false;
         bool isHeDone2 = false;
-
+        bool isHeDone3 = false;
         public bool ShouldOnlyActivateOnce {
             get { return m_ShouldOnlyActivateOnce; }
         }
@@ -52,6 +53,7 @@ namespace ScottEwing.MovingObjects.MovingPhysicsPlatform2D {
         }
 
         private void Start() {
+            if(moveStuff != null) 
             moveStuff2 =moveStuff.GetComponent<MoveStuff>();
            /* if (m_IsLeverOn)
                 moveStuff.OpenDoorBeforePortal();*/
@@ -118,6 +120,12 @@ namespace ScottEwing.MovingObjects.MovingPhysicsPlatform2D {
                 moveStuff2.OpenDoorAfterPortal();
                 isHeDone2 = true;
             }
+            if (shouldCheckForLeverInput3 && Input.GetButtonDown("Submit") && !isHeDone3)
+            {
+                StartCoroutine(MoveLeverToFinalPosition(-leverState));      // pass in - lever state to switch it to other position
+                moveStuff2.OpenDoorFirstLevel();
+                isHeDone3 = true;
+            }
 
         }
 
@@ -128,6 +136,10 @@ namespace ScottEwing.MovingObjects.MovingPhysicsPlatform2D {
             if (collision.CompareTag("Player") && this.gameObject.CompareTag("lever2"))
             {
                 shouldCheckForLeverInput2 = true;
+            }
+            if (collision.CompareTag("Player") && this.gameObject.CompareTag("lever3"))
+            {
+                shouldCheckForLeverInput3 = true;
             }
         }
 
