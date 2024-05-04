@@ -393,10 +393,7 @@ MonoBehaviour:
 
     Sound design by Diana
 
-    Art
-
-    Sameh
-    was a good guy'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1b7729434ffcb5e45833a131b13d07e2, type: 2}
   m_sharedMaterial: {fileID: 1129234681116581443, guid: 1b7729434ffcb5e45833a131b13d07e2, type: 2}
@@ -977,7 +974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &682735775
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2298,7 +2295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1691365213
 Transform:
   m_ObjectHideFlags: 0

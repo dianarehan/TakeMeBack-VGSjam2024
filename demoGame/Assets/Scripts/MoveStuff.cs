@@ -24,11 +24,16 @@ public class MoveStuff : MonoBehaviour
         doorBeforePortal = GameObject.Find("fakewall (1)");
         doorAfterPortal = GameObject.Find("fakewall");
         movingPlatfrom = GameObject.Find("MovingPlatform");
-        initialPosition = doorBeforePortal.transform.localPosition;
-        targetPosition = initialPosition + Vector3.up * 9f; // Move 6 units up
-
-        initialPosition2 = doorAfterPortal.transform.localPosition;
-        targetPosition2 = initialPosition2 + Vector3.up * 9f; // Move 6 units up
+        if (doorAfterPortal != null)
+        {
+            initialPosition = doorBeforePortal.transform.localPosition;
+            targetPosition = initialPosition + Vector3.up * 9f; // Move 6 units up
+        }
+        if (doorAfterPortal != null)
+        {
+            initialPosition2 = doorAfterPortal.transform.localPosition;
+            targetPosition2 = initialPosition2 + Vector3.up * 9f; // Move 6 units up
+        }
     }
 
     private void Update()

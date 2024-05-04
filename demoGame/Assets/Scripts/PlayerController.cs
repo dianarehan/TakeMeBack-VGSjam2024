@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log(fragmentScore);
         Debug.Log("Accumulated Score: " + PlayerPrefs.GetInt("AccumulatedScore", 0));
-        Debug.Log(portal2Object.name);
+        
     }
 
     void Update()
@@ -187,12 +187,11 @@ public class PlayerController : MonoBehaviour
     {
         SaveLocalScore(); // Save the local score to the accumulated score
         
-        if(SceneManager.GetActiveScene().name=="level2")
+        if(SceneManager.GetActiveScene().name=="level3")
             SceneManager.LoadScene("mainMenu");
         else
         {
-            DontDestroyOnLoad(gameObject);
-            DontDestroyOnLoad(camera);
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
