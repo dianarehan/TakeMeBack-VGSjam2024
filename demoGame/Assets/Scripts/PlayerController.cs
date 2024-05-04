@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
 
     GameObject startingPoint;
 
+    public Animator anim;
+
     void Start()
     {
         donePrinting = false;
@@ -71,6 +73,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float horizontalSignal = Input.GetAxis("Horizontal");
+        if(horizontalSignal != 0)
+        {
+            anim.SetBool("walking", true);
+        }
+        else
+        {
+            anim.SetBool("walking", false);
+        }
         this.transform.Translate(new Vector2(horizontalSignal*Time.deltaTime*speed, 0));
         if (!isFacingRight && horizontalSignal > 0)
             Flip();
@@ -85,7 +95,11 @@ public class PlayerController : MonoBehaviour
 
         float jumpingSignal = Input.GetAxis("Jump");
         if (jumpingSignal > 0 && isGrounded)
+        {
             Jump();
+            
+        }
+          
         if (foundFakeDoor && !donePrinting)
         {
             StartCoroutine(messageDisplay.DisplayMessage());
@@ -111,6 +125,7 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         //rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+        anim.SetBool("jumping", true);
         rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -162,6 +177,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("floor"))
         {
             isGrounded = true;
+            anim.SetBool("jumping", false);
         }
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {
