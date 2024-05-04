@@ -391,10 +391,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Development and Sound design by Diana
 
-    Level Design and concept by
+    Level Design and Concept by
     Rahma
 
-    lou and sameh were here
+    Lou and Sameh were here
 
 
 '
@@ -508,8 +508,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4, y: -39.996933}
-  m_SizeDelta: {x: 911.6152, y: 170.5719}
+  m_AnchoredPosition: {x: -4, y: -50.643}
+  m_SizeDelta: {x: 911.6152, y: 191.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &348446452
 MonoBehaviour:
@@ -2658,7 +2658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -284, y: -53}
+  m_AnchoredPosition: {x: -284, y: -74}
   m_SizeDelta: {x: 227.3816, y: 15.681}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1835180713
@@ -2683,7 +2683,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "1- Dont ever touch levers without needing to.\r\n2- move left and right
     with basic keys, press space to jump\r.\n3-press E to activate levers\r.\n4-sometimes
-    there are fake doors that will mess your\r \nnavigation, stay away from them."
+    there are fake doors that will mess your\r \nnavigation, stay away from them.\n5-finally
+    make sure to listen to level's music cuz apparently \nit is longer than the level
+    itself xD"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1b7729434ffcb5e45833a131b13d07e2, type: 2}
   m_sharedMaterial: {fileID: 1129234681116581443, guid: 1b7729434ffcb5e45833a131b13d07e2, type: 2}
@@ -2710,8 +2712,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2962,7 +2964,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289900734
+    rgba: 4292401378
   m_fontColor: {r: 0.8862746, g: 0.8470589, b: 0.8470589, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
