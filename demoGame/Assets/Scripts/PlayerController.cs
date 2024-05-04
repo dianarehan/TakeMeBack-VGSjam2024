@@ -11,8 +11,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     float speed = 8f;
-    float verticalSpeed = 9f;
-    float jumpSpeed = 20f;
+    
+    public float jumpSpeed = 20f;
 
     bool isFacingRight =true;
     bool isFacingALadder = false;
@@ -91,7 +91,9 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(oww());
             //gameObject.transform.localPosition = startingPoint.transform.localPosition;
+            //DontDestroyOnLoad(audioSource);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
         }
 
         float jumpingSignal = Input.GetAxis("Jump");
@@ -246,7 +248,7 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator OpenDelayedLevel()
     {
-        yield return new WaitForSeconds(5f); // Wait for one second
+        yield return new WaitForSeconds(2.5f); // Wait for one second
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
 
