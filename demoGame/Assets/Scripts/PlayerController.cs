@@ -10,9 +10,9 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    float speed = 5f;
+    float speed = 8f;
     float verticalSpeed = 9f;
-    float jumpSpeed = 9f;
+    float jumpSpeed = 20f;
 
     bool isFacingRight =true;
     bool isFacingALadder = false;
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         //rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-        rb.velocity = new Vector2(rb.velocity.x, jumpSpeed* rb.gravityScale);
+        rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

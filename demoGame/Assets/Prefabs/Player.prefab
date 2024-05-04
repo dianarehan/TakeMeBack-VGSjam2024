@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.45841932, g: 0.6150943, b: 0.48309126, a: 1}
+  m_Sprite: {fileID: 4842077697245885793, guid: 7d4f3f9923a72be40b48971e771ebf9c, type: 3}
+  m_Color: {r: 0.9924528, g: 0.9924528, b: 0.9924528, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb85231d6188e2408d0daf4cb1c04f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDisplayer: {fileID: 0}
+  camera: {fileID: 0}
+  portalSound: {fileID: 0}
+  moveStuff: {fileID: 0}
+  currLevelScore: 0
 --- !u!50 &4537144994657610811
 Rigidbody2D:
   serializedVersion: 4
@@ -162,8 +165,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.03513059}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    pivot: {x: 0.6, y: -0.25}
+    oldSize: {x: 0.1, y: 0.16}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
