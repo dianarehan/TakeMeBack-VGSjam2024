@@ -90,7 +90,8 @@ public class PlayerController : MonoBehaviour
         if (gameObject.transform.localPosition.y < -35)
         {
             StartCoroutine(oww());
-            gameObject.transform.localPosition = startingPoint.transform.localPosition;
+            //gameObject.transform.localPosition = startingPoint.transform.localPosition;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         float jumpingSignal = Input.GetAxis("Jump");
@@ -229,7 +230,7 @@ public class PlayerController : MonoBehaviour
         SaveLocalScore(); // Save the local score to the accumulated score
         
         
-            DontDestroyOnLoad(camera.GetComponent<AudioSource>());
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         

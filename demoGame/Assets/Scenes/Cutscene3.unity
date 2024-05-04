@@ -363,7 +363,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 1180603296}
-  sceneNumber: 0
+  sceneNumber: 2
+  clip: {fileID: 8300000, guid: 810e41411e596e544be6e11e300840c9, type: 3}
 --- !u!1 &1326845931
 GameObject:
   m_ObjectHideFlags: 0
