@@ -228,14 +228,11 @@ public class PlayerController : MonoBehaviour
     {
         SaveLocalScore(); // Save the local score to the accumulated score
         
-        if(SceneManager.GetActiveScene().name=="level3")
-            SceneManager.LoadScene("mainMenu");
-        else
-        {
+        
             DontDestroyOnLoad(camera.GetComponent<AudioSource>());
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-        }
+        
     }
       IEnumerator TeleportAfterDelay()
     {
