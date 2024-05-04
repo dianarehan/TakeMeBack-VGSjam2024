@@ -29,9 +29,9 @@ public class MessageDisplay : MonoBehaviour
         foreach (char c in message)
         {
             label.text += c;
-            yield return new WaitForSeconds(0.02f); // Wait for 0.2 seconds
+            yield return new WaitForSeconds(0.05f); // Wait for 0.2 seconds
         }
-        yield return new WaitForSeconds(0.72f);
+        yield return new WaitForSeconds(0.2f);
         panelDisplayer.SetActive(false);
         label = null;
         
