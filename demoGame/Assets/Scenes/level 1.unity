@@ -14034,7 +14034,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 40456b3c9fbdf1a4da772f747cc8a72a, type: 3}
     - target: {fileID: 3558291417488652772, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: currLevelScore
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4537144994657610811, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: m_Mass
