@@ -9,7 +9,7 @@ public class MessageDisplay : MonoBehaviour
     public GameObject panelDisplayer;
     private TextMeshProUGUI label;
     public string message = "Not All Doors are Exit, You gotta watch out!";
-    bool done = false;
+    
     void Start()
     {   
         label = textMeshPro.GetComponent<TextMeshProUGUI>();
@@ -23,7 +23,7 @@ public class MessageDisplay : MonoBehaviour
     }
     public IEnumerator DisplayMessage()
     {
-        done = false;
+        
         panelDisplayer.SetActive(true);
         
         foreach (char c in message)
