@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class MoveStuff : MonoBehaviour
 {
-    [SerializeField] GameObject doorBeforePortal;
-    [SerializeField] float openDuration = 2f; // Duration in seconds for the door to fully open
+    GameObject doorBeforePortal;
+    float openDuration = 2f; // Duration in seconds for the door to fully open
 
     private Vector3 initialPosition;
     private Vector3 targetPosition;
     private bool isOpening = false;
 
-    [SerializeField] GameObject doorAfterPortal;
-    [SerializeField] float openDuration2 = 2f; // Duration in seconds for the door to fully open
+    GameObject doorAfterPortal;
+    float openDuration2 = 2f; // Duration in seconds for the door to fully open
 
     private Vector3 initialPosition2;
     private Vector3 targetPosition2;
@@ -21,6 +21,8 @@ public class MoveStuff : MonoBehaviour
     public GameObject movingPlatfrom;
     private void Start()
     {
+        doorBeforePortal = GameObject.Find("fakewall (1)");
+        doorAfterPortal = GameObject.Find("fakewall");
         initialPosition = doorBeforePortal.transform.localPosition;
         targetPosition = initialPosition + Vector3.up * 9f; // Move 6 units up
 
@@ -68,7 +70,7 @@ public class MoveStuff : MonoBehaviour
         Vector3 target = new Vector3(-30, 2.5f, 0);
         movingPlatfrom.transform.localPosition = Vector3.Lerp(movingPlatfrom.transform.localPosition, target, t);
 
-        
+
     }
     public void OpenDoorBeforePortal()
     {
