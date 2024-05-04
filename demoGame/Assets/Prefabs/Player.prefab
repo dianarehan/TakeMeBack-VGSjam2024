@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 564768321182824456}
   - component: {fileID: 3558291417488652772}
   - component: {fileID: 4537144994657610811}
-  - component: {fileID: 5253420058474103060}
+  - component: {fileID: 7361754383505651312}
+  - component: {fileID: 2270349818976495903}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4842077697245885793, guid: 7d4f3f9923a72be40b48971e771ebf9c, type: 3}
-  m_Color: {r: 0.9924528, g: 0.9924528, b: 0.9924528, a: 1}
+  m_Sprite: {fileID: 8577779778265984275, guid: 7d4f3f9923a72be40b48971e771ebf9c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,10 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
-  portalSound: {fileID: 0}
+  portalSound: {fileID: 8300000, guid: 40456b3c9fbdf1a4da772f747cc8a72a, type: 3}
   moveStuff: {fileID: 0}
-  currLevelScore: 0
-  anim: {fileID: 0}
+  currLevelScore: 14
+  anim: {fileID: 2270349818976495903}
 --- !u!50 &4537144994657610811
 Rigidbody2D:
   serializedVersion: 4
@@ -116,10 +117,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -131,8 +132,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &5253420058474103060
-BoxCollider2D:
+--- !u!60 &7361754383505651312
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -163,7 +164,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.03513059}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.6, y: -0.25}
@@ -173,6 +174,32 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2.070261}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.06, y: 0.19999999}
+      - {x: -0.06, y: 0.06}
+      - {x: -0.049999997, y: 0.04}
+      - {x: 0.04, y: 0.04}
+      - {x: 0.04, y: 0.19999999}
+  m_UseDelaunayMesh: 0
+--- !u!95 &2270349818976495903
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2908231942986184247}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 64643d77fe7794944920e493f69200ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
