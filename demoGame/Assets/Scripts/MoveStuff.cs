@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class MoveStuff : MonoBehaviour
 {
-    GameObject doorBeforePortal;
-    float openDuration = 2f; // Duration in seconds for the door to fully open
+     GameObject doorBeforePortal;
+     float openDuration = 2f; // Duration in seconds for the door to fully open
 
     private Vector3 initialPosition;
     private Vector3 targetPosition;
@@ -70,7 +70,7 @@ public class MoveStuff : MonoBehaviour
         Vector3 target = new Vector3(-30, 2.5f, 0);
         movingPlatfrom.transform.localPosition = Vector3.Lerp(movingPlatfrom.transform.localPosition, target, t);
 
-
+        
     }
     public void OpenDoorBeforePortal()
     {

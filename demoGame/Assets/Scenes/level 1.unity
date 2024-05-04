@@ -645,6 +645,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8167790129882259385, guid: b909e3a652eb42a45a685a01710d7bed, type: 3}
   m_PrefabInstance: {fileID: 111824489}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &131312680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 131312682}
+  - component: {fileID: 131312681}
+  m_Layer: 0
+  m_Name: StuffManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &131312681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131312680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d22f7a1b94ed04bac2385420cdb698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorBeforePortal: {fileID: 0}
+  openDuration: 2
+  doorAfterPortal: {fileID: 0}
+  openDuration2: 2
+  movingPlatfrom: {fileID: 0}
+--- !u!4 &131312682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131312680}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.02061835, y: -1.0085864, z: -11.005736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &160375925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5984,6 +6033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 72703073}
+  panelDisplayer: {fileID: 0}
   message: Hello, world!
 --- !u!1 &1259651903
 GameObject:
@@ -10775,6 +10825,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1258579148}
+    - target: {fileID: 3558291417488652772, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
+      propertyPath: portalSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 40456b3c9fbdf1a4da772f747cc8a72a, type: 3}
     - target: {fileID: 4537144994657610811, guid: 3a43b2735e93c4547b5b293cd0e34daa, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -10932,3 +10986,4 @@ SceneRoots:
   - {fileID: 1576191977}
   - {fileID: 242610004}
   - {fileID: 1179896965}
+  - {fileID: 131312682}
