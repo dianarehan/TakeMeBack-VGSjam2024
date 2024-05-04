@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 20f;
 
     bool isFacingRight =true;
-    bool isFacingALadder = false;
+    
     bool isGrounded = true;
     bool donePrinting = false;
     Rigidbody2D rb;
